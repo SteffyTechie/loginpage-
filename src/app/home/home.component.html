@@ -1,0 +1,155 @@
+<div class="home-container">
+  <h2>Registration Form</h2>
+  <form class="form-container" (ngSubmit)="onSubmit()" [formGroup]="homeForm">
+ 
+    <div class="form-row">
+      <div class="form-group">
+        <label>Username</label>
+        <input
+          type="text"
+          id="username"
+          formControlName="username"
+          (keypress)="validateAlphaNumericOnly($event)"
+          placeholder="Enter username"
+          maxlength="20"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          formControlName="firstName"
+          (keypress)="validateAlphaNumericOnly($event)"
+          placeholder="Enter first name"
+          maxlength="20"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          formControlName="lastName"
+          (keypress)="validateAlphaNumericOnly($event)"
+          placeholder="Enter last name"
+          maxlength="20"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          (keypress)="validateAlphaNumericOnly($event)"
+          placeholder="Enter email"
+          maxlength="50"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Gender</label>
+        <input
+          type="gender"
+          id="gender"
+          formControlName="gender"
+          placeholder="Enter your gender"
+          maxlength="10"
+          required
+        />
+      </div> 
+      <div class="form-group">
+        <label>Phone</label>
+        <input
+          type="text"
+          id="phone"
+          formControlName="phone"
+          (keypress)="validateNumberOnly($event)"
+          placeholder="Enter phone number"
+          maxlength="10"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Address</label>
+          <textarea id="address"
+          formControlName="address"
+          placeholder="Enter address"
+          maxlength="100"
+          required>
+        </textarea>
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <input
+          type="text"
+          id="city"
+          formControlName="city"
+          (keypress)="validateAlphaNumericOnly($event)"
+          placeholder="Enter city"
+          maxlength="30"
+          required
+        />
+      </div>
+    </div>
+      
+
+    
+    <div class="form-row">
+      <div class="form-group">
+        <label>State/Province</label>
+        <input
+          type="text"
+          id="state"
+          formControlName="state"
+          (keypress)="validateAlphaNumericOnly($event)"
+          placeholder="Enter state or province"
+          maxlength="30"
+          required
+        />
+      </div>
+ 
+      <div class="form-group">
+        <label>Zip/Postal Code</label>
+        <input
+          type="text"
+          id="zip"
+          formControlName="zip"
+          (keydown)="validateAlphaNumericOnly($event)"
+          placeholder="Enter zip or postal code"
+          maxlength="10"
+          required
+        />
+      </div>
+     
+    </div>
+
+    
+    <div class="form-row">
+      <div class="form-group">
+        <label>Document</label>
+        <input type="file" (change)="onChangeDocId($event)" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group full-width button-container">
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+      <div class="form-group ">
+        <button type="edit" class="edit-btn">Edit</button>
+      </div>
+    </div>
+  </form>
+</div>
